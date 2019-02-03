@@ -11,7 +11,17 @@
  * It is generally better to create a new file per style scope.
  */
 @import "bootstrap";
-.container {
+@import "welcome";
+@import "navigation";
+
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+
+container {
   padding-top: 15px;
 }
 
@@ -21,5 +31,8 @@ thead {
 
 .form-contol {
   background-color: #efeeef;
-  border: 2px solid #eeccdd;
+  border: 3px solid #f3b1c1;
+}
+.btn-light {
+  border: 3px solid #f3b1c1;
 }
