@@ -11,3 +11,15 @@
  * It is generally better to create a new file per style scope.
  */
 @import "bootstrap";
+.container {
+  padding-top: 15px;
+}
+
+thead {
+  background-color: #dddddd;
+}
+
+.form-contol {
+  background-color: #efeeef;
+  border: 2px solid #eeccdd;
+}
