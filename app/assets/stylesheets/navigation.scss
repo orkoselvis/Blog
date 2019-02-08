@@ -2,11 +2,23 @@
   background-color: #000000 !important;
 }
 .nav-link {
-
 }
+
+#active_nav-link {
+  display: block;
+  color: #BF8383;
+  padding: 0.5rem 1rem;
+}
+
+.active_nav-link {
+  display: block;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+}
+
 .nav-item a {
   font-weight: bold;
-  color: #f3cace;
+  color: #f3cace !important;
 }
 
 .nav-item a:hover {
