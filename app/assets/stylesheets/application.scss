@@ -13,15 +13,38 @@
 @import "bootstrap";
 @import "welcome";
 @import "navigation";
+@import "footer";
 
 /* Show it is fixed to the top */
+
 body {
-  min-height: 75rem;
+  min-height: 50rem;
   padding-top: 4.5rem;
+  overflow-x: hidden;
 }
 
-container {
+.white {
+  color: #ffffff;
+}
+
+.grey {
+  color: #ddcccc;
+}
+
+.small-font {
+  font-size: 11px;
+}
+
+.container {
   padding-top: 15px;
+}
+
+.linktxt {
+
+}
+
+.linktxt:hover {
+  color: #ffffff;
 }
 
 thead {
