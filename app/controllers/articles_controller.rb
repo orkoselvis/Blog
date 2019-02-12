@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-http_basic_authenticate_with name: "orko", password: "Ilove991",
+http_basic_authenticate_with name: "orko", password: "1234567",
 except: [:index, :show, :search]
 
   def index
@@ -28,10 +28,10 @@ except: [:index, :show, :search]
   end
 
   def search
-    if article_params[:search].blank?
+    if params[:search].blank?
       @articles = Article.all
     else
-      @articles = Article.search(article_params)
+      @articles = Article.search(params)
     end
   end
 
@@ -52,6 +52,6 @@ except: [:index, :show, :search]
 
 private
   def article_params
-    params.require(:article).permit(:title, :text, :search)
+    params.require(:article).permit(:pic, :text, :search)
   end
-end
+  end

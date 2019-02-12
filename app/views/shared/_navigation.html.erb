@@ -17,9 +17,9 @@
         </li>
       </ul>
         <div class="form-inline mt-2 mt-md-0">
-          <%= form_for search_articles_path, method: :get do |f| %>
-            <%= f.text_field :search, placeholder: "Search", class: "form-control mr-sm-2" %>
-            <%= f.submit "Search", class: "btn btn-light my-2 my-sm-0" %>
+          <%= form_tag search_articles_path, method: :get do %>
+            <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control mr-sm-2" %>
+            <%= submit_tag "Search", class: "btn btn-light my-2 my-sm-0" %>
           <% end %>
         </div>
   <!--  <form class="form-inline mt-2 mt-md-0">
