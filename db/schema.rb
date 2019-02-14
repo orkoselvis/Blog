@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2019_02_13_133604) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pic"
   end
 
   create_table "comments", force: :cascade do |t|
