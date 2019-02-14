@@ -17,4 +17,10 @@ class SessionsController < ApplicationController
       "User ID and/or Password Invalid!"
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice:
+    "You successfully Logged out!"
+  end
 end

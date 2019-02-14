@@ -26,9 +26,9 @@
 </div>
 <% end %> <!-- end of checking errors -->
 
-<%= f.text_field :userid, placeholder: 'Input a User ID', class:'form-contol' %>
-<%= f.email_field :email, placeholder: 'Input your email', class:'form-contol' %>
-<%= f.password_field :password, placeholder: 'Create a password', class:'form-contol' %>
+<%= f.text_field :userid, placeholder: 'Input a User ID', class:'form-contol' %><br>
+<%= f.email_field :email, placeholder: 'Input your email', class:'form-contol' %><br>
+<%= f.password_field :password, placeholder: 'Create a password', class:'form-contol' %><br> 
 <%= f.password_field :password_confirmation, placeholder: 'Confirm password', class:'form-contol' %><br>
 <%= f.submit 'Create Account' %>
 <% end %>
