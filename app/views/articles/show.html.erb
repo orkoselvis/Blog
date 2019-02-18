@@ -2,7 +2,7 @@
 <div class="col"></div>
 <div class="col-md-7">
 <% if @article.photo.present? %>
-<%= image_tag (@article.photo, style:"width:100%") %>
+<%= image_tag(@article.photo, style:"width:100%") %>
 <% else %>
 <%= image_tag 'banner.png', style:"width:100%" %>
 <% end %>
@@ -15,7 +15,7 @@
   <%= @article.text %>
 </p>
 <% if @article.music.present? %>
-<%= audio_tag(@article.music, controls: true, style:"width:100%")
+<%= audio_tag(@article.music, controls: true, style:"width:100%") %>
 <% end %>
 </p>
 </p>
