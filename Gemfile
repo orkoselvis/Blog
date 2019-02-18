@@ -30,6 +30,11 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#For File Upload
+gem 'paperclip', '~> 6.0'
+gem 'aws-sdk-s3', '~> 1.9'
+gem 'paperclip-av-transcoder'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

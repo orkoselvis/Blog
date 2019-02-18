@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
-http_basic_authenticate_with name: "orko", password: "1234567",
-except: [:index, :show, :search]
+#http_basic_authenticate_with name: "orko", password: "1234567",
+#except: [:index, :show, :search]
+
+before_action :admin_authorize, :except => [:index, :show, :search]
 
   def index
     @articles = Article.all
@@ -52,6 +54,6 @@ except: [:index, :show, :search]
 
 private
   def article_params
-    params.require(:article).permit(:title, :text, :search)
+    params.require(:article).permit(:title, :text, :search, :photo, :music, :movie)
   end
   end

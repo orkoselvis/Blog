@@ -2,7 +2,7 @@
 <div class="col"></div>
 <div class="col-md-7">
 <h1> Create a New Article!</h1>
-<%= form_for :article, url: articles_path do |f| %>
+<%= form_for :article, url: articles_path, html: {multipart: true} do |f| %>
 <div class="field" style="100%;">
 <!-- Checking for Errors -->
 <% if @article. errors.any? %>
@@ -34,7 +34,20 @@
     <%= f.label :text %><br>
     <%= f.text_area :text, class:'form-contol' %>
   </p>
+
+
   <p>
+    <%= f.label :photo %> <br>
+    <%= f.file_field :photo, class:'form-contol' %>
+  </p>
+  <p>
+    <%= f.label :music %> <br>
+    <%= f.file_field :music, class:'form-contol' %>
+  </p>
+  <p>
+    <%= f.label :movie %> <br>
+    <%= f.file_field :movie, class:'form-contol' %>
+  </p>
     <%= f.submit class:'btn btn-lg btn-success'%>
   </p>
 </div> <!-- .field -->
