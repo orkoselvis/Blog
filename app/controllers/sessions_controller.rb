@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
     user = User.find_by_userid(params[:userid])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      byebug
       redirect_to root_path, notice:
       "Welcome #{user.userid}, you successfully Signed In!"
     else

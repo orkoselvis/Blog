@@ -16,7 +16,7 @@ class SubscribersController < ApplicationController
         "Sorry, that email already exists!"
       elsif @subscriber.save
         redirect_to root_path, notice:
-        "Thank you #{@subscriber.f_name}, for subscribing to my Newslatter!"
+        "Thank you #{@subscriber.f_name}, for subscribing to my Newsletter!"
       else
         redirect_to root_path, alert:
         "Sorry, I failed to save your information. Please, try again!"
