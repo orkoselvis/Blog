@@ -24,8 +24,7 @@
       <%= f.email_field :email, placeholder: "Your Email",
                          class:"form-control mr-sm-2 sm_style" %>
       <div class="form-contol2 sm_style">
-      <%= f.select :country,
-            options_for_select(['Country1', 'County2', 'County3', 'County4']),
+      <%= f.select :country, your_country,
             prompt: 'Select your Country' %>
       </div>
       <%= f.submit 'Submit', class:"btn btn-light my-2 my-sm-0" %>

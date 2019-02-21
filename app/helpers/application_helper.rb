@@ -11,4 +11,23 @@ module ApplicationHelper
     end
   end
 
+#create a list of countries of the world in and Array
+  def your_country
+    countries = ["Afghanistan",
+                  "Albania",
+                  "Algeria",
+                  "Andorra",
+                  "Angola",
+                  "Antigua and Barbuda",
+                  "Argentina",
+                  "Armenia",
+                  "Aruba",
+                  "Australia",
+                  "Austria",
+                  "Azerbaijan"]
+    countries.each do |country|
+      my_country = "#{country}"
+    end
+    return countries
+  end
 end

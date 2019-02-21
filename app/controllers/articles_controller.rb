@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 before_action :admin_authorize, :except => [:index, :show, :search]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.reverse
   end
 
   def new
@@ -54,6 +54,6 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
 private
   def article_params
-    params.require(:article).permit(:title, :text, :search, :photo, :music, :movie)
+    params.require(:article).permit(:title, :text, :search, :music, :movie, :photo)
   end
-  end
+end

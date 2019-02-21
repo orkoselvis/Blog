@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   validates :text, presence: true,
             length: {minimum: 2}
 
-  #For photo scpecial characters \A, \w, \z
+  #For photo special characters \A, \w, \z
   has_attached_file :photo, styles: {large: "450x450>", thumb: "50x50#"}
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
