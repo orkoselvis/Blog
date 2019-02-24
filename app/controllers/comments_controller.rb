@@ -4,7 +4,7 @@ before_action :admin_authorize, only: [:destroy]
 
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
+    @comment = @article.comments.create(ncomment_params)
     if @comment.save
       redirect_to article_path(@article), notice:
       "You successfully created a comment."

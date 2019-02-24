@@ -10,6 +10,8 @@
 <table class="table table-hover table-striped table-responsive-xs">
 <thead>
 <tr>
+  <th>Photo</th>
+  <th>Date</th>
   <th>Title</th>
   <th>Text</th>
 <% if current_user && current_user.admin? %>
@@ -19,8 +21,19 @@
 <%end%>
 </tr>
 </thead>
+<tbody>
 <% @articles.each do |article| %>
 <tr>
+  <td>
+    <% if article.photo.present? %>
+    <%= image_tag article.photo.url(:thumb) %>
+    <% else %>
+    <%= image_tag('noimage.jpg', style:"width:50px;") %>
+    <% end %>
+  </td>
+  <td>
+    <%= article.created_at.strftime('%d/%m/%Y')%>
+  </td>
   <td>
     <%= article.title %>
   </td>
@@ -43,6 +56,7 @@
   <% end %>
 </tr>
 <% end %>
+</tbody>
 </table>
 <p>
   <%= link_to 'Home', welcome_index_path, class:'btn btn-md btn-warning' %>

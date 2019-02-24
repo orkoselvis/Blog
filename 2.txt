@@ -1,0 +1,45 @@
+heroku domains - list of all heroku app domains
+for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; done - kill all apps
+heroku apps -A - all apps in heroku
+
+heroku create - creates heroku app
+git push heroku master - pushing changes in heroku
+git push heroku - workin fine that previous? o_O
+than: heroku run rails db:migrate - run this after changes in db!
+heroku run rails console  - to run and debugg heroku application in console
+
+rails generate controller StaticPages home help  - generate
+rails destroy  controller StaticPages home help - cancel generating
+
+ps aux | grep spring - list of all processes in UNIX
+kill -15 id - kill it
+
+rails console --sandbox
+
+$ rails test
+$ git push heroku
+$ heroku run rails db:migrate
+
+ $ rails console test       --- to run in test environment in console
+  Loading test environment
+  >> Rails.env
+  => "test"
+  >> Rails.env.test?
+  => true
+
+rails server --environment production - to run server in production!!
+then: rails db:migrate RAILS_ENV=production
+
+$heroku logs --tail - to see all logs
+$git remote rm heroku - to remove remote heroku app
+$git remote add heroku git@heroku.com:project.git - to add existing remote app locally
+
+
+$ rails console
+>> user = User.new(name: "Foo Bar", email: "foo@invalid",
+?>                 password: "dude", password_confirmation: "dude")
+>> user.save
+=> false
+>> user.errors.full_messages
+=> ["Email is invalid", "Password is too short (minimum is 6 characters)"]
+kkoo, kko 2,3 
