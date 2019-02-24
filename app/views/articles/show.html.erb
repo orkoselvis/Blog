@@ -2,7 +2,7 @@
 <div class="col"></div>
 <div class="col-md-7">
 <% if @article.photo.present? %>
-<%= image_tag(@article.photo, style:"width:100%") %>
+<%= image_tag(@article.photo.url(:original), class: "thumb-style") %>
 <% else %>
 <%= image_tag 'banner.png', style:"width:100%" %>
 <% end %>
@@ -14,15 +14,16 @@
   <h3>ARTICLE:</h3>
   <%= @article.text %>
 </p>
-<% if @article.music.present? %>
-<%= audio_tag(@article.music, controls: true, style:"width:100%") %>
-<% end %>
+<p>
+  <% if @article.music.present? %>
+  <%= audio_tag(@article.music.url(:original), controls: true, class: "thumb-style") %>
+  <% end %>
 </p>
-</p>
-<% if @article.movie.present? %>
-<%= video_tag(@article.movie, controls: true,
-    type:'video/mp4', style:"width:100%") %>
-<% end %>
+<p>
+  <% if @article.movie.present? %>
+  <%= video_tag(@article.movie.url(:original), controls: true,
+      type: 'video/mp4', class: "thumb-style") %>
+  <% end %>
 </p>
 <p>
   <%= @article.created_at.strftime('%A %-b %-d, %Y | %l:%M %p')%>
