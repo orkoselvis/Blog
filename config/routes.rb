@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   end
   resources :subscribers
   root 'welcome#index'
-
+  get 'pages/about' => 'application#show'
 end
