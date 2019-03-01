@@ -5,7 +5,7 @@ default: &default
   encoding: unicode
   host: localhost
   user: orko
-  password: 1234567
+  password: Ilove991
 
 development:
   <<: *default
