@@ -5,7 +5,12 @@ class ArticlesController < ApplicationController
 before_action :edit, :admin_authorize, :except => [:index, :show, :search]
 
   def index
-    @articles = Article.all.reverse
+    if params[:category].blank?
+      @articles = Article.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @articles = Article.where(category_id: @category_id).order("created_at DESC")
+    end
   end
 
   def new
@@ -55,5 +60,9 @@ before_action :edit, :admin_authorize, :except => [:index, :show, :search]
 private
   def article_params
     params.require(:article).permit(:title, :text, :category_id, :search, :music, :movie, :photo)
+  end
+
+  def find_article
+    @article = Article.find(params[:id])
   end
 end
