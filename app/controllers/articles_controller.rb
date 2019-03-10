@@ -54,12 +54,12 @@ before_action :edit, :admin_authorize, :except => [:index, :show, :search]
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to article_path
+    redirect_to articles_path
   end
 
 private
   def article_params
-    params.require(:article).permit(:title, :text, :category_id, :search, :music, :movie, :photo)
+    params.require(:article).permit(:title, :text, :search, :music, :movie, :photo)
   end
 
   def find_article
