@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 #http_basic_authenticate_with name: "orko", password: "1234567",
 #except: [:index, :show, :search]
 
-before_action :edit, :admin_authorize, :except => [:index, :show, :search]
+before_action :admin_authorize, :except => [:index, :show, :search]
 
   def index
     if params[:category].blank?
@@ -27,7 +27,7 @@ before_action :edit, :admin_authorize, :except => [:index, :show, :search]
     @article.category_id = params[:category_id]
 
     respond_to do |format|
-      if article.save
+      if @article.save
         format.html { redirect_to @article, notice: "Article was successfully created!" }
         format.json { render :show, status: :created, location: @article }
       else
