@@ -37,7 +37,7 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
   def edit
     @article = Article.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id]}
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   def search
