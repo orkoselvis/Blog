@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-before_action :edit, :admin_authorize, :except => [:index, :show, :search]
+before_action :admin_authorize, :except => [:index, :show, :search]
 
   def index
     if params[:category].blank?
@@ -13,6 +13,7 @@ before_action :edit, :admin_authorize, :except => [:index, :show, :search]
 
   def new
     @article = Article.new
+    @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
   def show
@@ -21,15 +22,22 @@ before_action :edit, :admin_authorize, :except => [:index, :show, :search]
 
   def create
     @article = Article.new(article_params)
-    if @article.save
-      redirect_to @article
-    else
-      render 'new'
+    @article.category_id = params[:category_id]
+
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to @article, notice: "Article was successfully created!" }
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new}
+        format.json {render json: @article.errors, status: :unprocessable_entity}
+      end
     end
   end
 
   def edit
     @article = Article.find(params[:id])
+    @categories = Category.all.map { |c| [c.name, c.id]}
   end
 
   def search
@@ -42,6 +50,7 @@ before_action :edit, :admin_authorize, :except => [:index, :show, :search]
 
   def update
     @article = Article.find(params[:id])
+    @article.category_id = params[:category_id]
     if @article.update(article_params)
       redirect_to @article
     else
