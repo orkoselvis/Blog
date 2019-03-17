@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice:
       "Welcome #{user.userid}, you successfully Signed In!"
     else
-      render 'new', alert:
+      redirect_to new_session_path, alert:
       "User ID and/or Password Invalid!"
     end
   end

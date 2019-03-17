@@ -12,6 +12,11 @@
     <%= f.text_area :text, class:'form-contol' %>
   </p>
   <p>
+    <%= f.label :category %><br>
+    <%= f.select :category, categories,
+        prompt: "Choose your category" %>
+  </p>
+  <p>
     <%= f.label :photo %> <br>
     <%= f.file_field :photo, class:'form-contol' %>
   </p>
