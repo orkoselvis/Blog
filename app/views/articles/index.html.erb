@@ -41,7 +41,9 @@
     <%= truncate(article.text, length: 75) %>
   </td>
   <td>
-    <%= link_to Category.find(article.category_id).name, category_path(article.category_id) %>
+    <% if article.category %>
+      <%= link_to article.category.name, article.category %>
+    <% end %>
   </td>
   <td>
     <%= link_to 'Show', article_path(article), class:'btn btn-sm btn-info' %>

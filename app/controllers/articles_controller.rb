@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-
 before_action :admin_authorize, :except => [:index, :show, :search]
 
   def index
+    @articles = Article.includes(:category).order("created_at DESC")
     if params[:category].blank?
       @articles = Article.all.order("created_at DESC")
     else
