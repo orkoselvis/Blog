@@ -1,10 +1,8 @@
 class ArticlesController < ApplicationController
-#http_basic_authenticate_with name: "orko", password: "1234567",
-#except: [:index, :show, :search]
-
 before_action :admin_authorize, :except => [:index, :show, :search]
 
   def index
+    @articles = Article.includes(:category).order("created_at DESC")
     if params[:category].blank?
       @articles = Article.all.order("created_at DESC")
     else
@@ -39,7 +37,7 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
   def edit
     @article = Article.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id]}
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   def search
@@ -68,7 +66,7 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
 private
   def article_params
-    params.require(:article).permit(:title, :text, :search, :music, :movie, :photo)
+    params.require(:article).permit(:title, :text, :search, :music, :movie, :photo, :category_id)
   end
 
   def find_article
