@@ -22,7 +22,7 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
   def create
     @article = Article.new(article_params)
-    @article.category_id = params[:category_id]
+    @categories = Category.all.map{|c| [c.name, c.id]}
 
     respond_to do |format|
       if @article.save
@@ -37,7 +37,7 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
   def edit
     @article = Article.find(params[:id])
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
+    @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
   def search
@@ -66,7 +66,7 @@ before_action :admin_authorize, :except => [:index, :show, :search]
 
 private
   def article_params
-    params.require(:article).permit(:title, :text, :search, :music, :movie, :photo, :category_id)
+    params.require(:article).permit(:title, :text, :search, :music, :movie, :photo, :category_id, :category_name)
   end
 
   def find_article

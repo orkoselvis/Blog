@@ -3,6 +3,8 @@
 <div class="col-md-7">
 <h1> Edit Article!</h1>
 <%= form_for @article, html: {multipart: true} do |f| %>
+<!-- Checking for Errors -->
+<%= render 'articles/error' %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title, class:'form-contol' %>
@@ -13,7 +15,7 @@
   </p>
   <p>
     <%= f.label :category %><br>
-    <%= f.select :category, categories,
+    <%= f.select :category_id, Category.all.collect{|c| [c.name, c.id]},
         prompt: "Choose your category" %>
   </p>
   <p>
