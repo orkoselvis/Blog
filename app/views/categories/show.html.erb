@@ -10,10 +10,11 @@
   <%= @category.desc %>
 </p>
 
-<h3> Articles under this category </h3>
+<h3> Articles under this category: </h3>
 <% Article.where(category_id: @category.id).each do |article| %>
-<li> <%= article.name %> </li>
+<li> <%= "#{article.title} | #{article.text}"  %> </li>
 <% end %>
+<br>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Back', categories_path %> |
+<%= link_to 'Edit', edit_category_path(@category) %>
