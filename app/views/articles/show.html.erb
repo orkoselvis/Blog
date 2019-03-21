@@ -15,6 +15,10 @@
   <%= @article.text %>
 </p>
 <p>
+  <h3>CATEGORY:</h3>
+  <%= @article.category.name%>
+</p>
+<p>
   <% if @article.music.present? %>
   <%= audio_tag(@article.music.url(:original), controls: true, class: "thumb-style") %>
   <% end %>

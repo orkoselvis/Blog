@@ -1,9 +1,9 @@
 class Article < ApplicationRecord
+  belongs_to :category
   has_many :comments, dependent: :destroy
-  validates :title, presence: true,
-            length: {minimum: 3}
-  validates :text, presence: true,
-            length: {minimum: 2}
+  validates :title, presence: true, length: {minimum: 3}
+  validates :text, presence: true, length: {minimum: 3}
+  validates :category_id, presence: true
 
   #For photo special characters \A, \w, \z
   has_attached_file :photo, styles: {large: "450x450>", thumb: "50x50#"}

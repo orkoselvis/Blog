@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   #if on active page color = white
   #if not on active page color = regular
 
@@ -13,7 +12,8 @@ module ApplicationHelper
 
 #create a list of countries of the world in and Array
   def your_country
-    countries = ["Afghanistan",
+    countries =
+                ["Afghanistan",
                  "Albania",
                  "Algeria",
                  "Andorra",
@@ -34,4 +34,18 @@ module ApplicationHelper
     end
     return countries
   end
+
+  def categories
+    category =
+      ["Sport",
+      "Movie",
+      "Art",
+      "Nature",
+      "Exotic"]
+    category.each do |categ|
+      my_category = "#{categ}"
+    end
+    return category
+  end
+
 end

@@ -5,7 +5,7 @@
 <%= form_for @user do |f| %>
 <div class="field" style="100%;">
 <!-- Checking for Errors -->
-<% if @user. errors.any? %>
+<% if @user.errors.any? %>
 <div id="errors_explanation">
   <h2>
     <%= pluralize(@user.errors.count, "error") %>
@@ -28,7 +28,7 @@
 
 <%= f.text_field :userid, placeholder: 'Input a User ID', class:'form-contol' %><br>
 <%= f.email_field :email, placeholder: 'Input your email', class:'form-contol' %><br>
-<%= f.password_field :password, placeholder: 'Create a password', class:'form-contol' %><br> 
+<%= f.password_field :password, placeholder: 'Create a password', class:'form-contol' %><br>
 <%= f.password_field :password_confirmation, placeholder: 'Confirm password', class:'form-contol' %><br>
 <%= f.submit 'Create Account' %>
 <% end %>
