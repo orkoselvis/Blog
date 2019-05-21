@@ -25,7 +25,10 @@ class SubscribersController < ApplicationController
   def destroy
     @subscriber = Subscriber.find(params[:id])
     @subscriber.destroy
-    redirect_to subscribers_path
+    respond_to do |format|
+      format.js
+      format.html {redirect_to subscribers_path}
+    end
   end
 
   private

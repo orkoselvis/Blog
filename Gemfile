@@ -34,10 +34,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip', '~> 6.0'
 gem 'aws-sdk-s3', '~> 1.9'
 gem 'paperclip-av-transcoder'
+gem 'hirb'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
