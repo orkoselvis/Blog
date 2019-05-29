@@ -7,3 +7,7 @@ one:
 two:
   name: MyString
   desc: MyText
+
+three:
+  name: Movie
+  desc: What a shit is this
