@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article do
   subject {Article.new}
+  fixtures :categories
 
   it "is not valid without a title" do
     expect(subject).not_to be_valid
@@ -15,7 +16,6 @@ RSpec.describe Article do
   end
 
   it "is valid with proper data" do
-    @category = Category.create(name: "Iaaazz", desc: "This is a truly yaaaaz")
     subject.title = 'a' * 10
     subject.text = 'b' * 8
     subject.category_id = 2
