@@ -15,7 +15,7 @@ three:
   body: ThirdComment
   article: three
 
-  four:
+four:
   commenter: Benito
   body: ForthComment
   article: four
