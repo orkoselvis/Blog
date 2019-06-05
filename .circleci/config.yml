@@ -1,69 +1,8 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: "ruby:2.5"
-
-    environment:
-      TEST_REPORTS: /tmp/test-reports
-
-    working_directory: ~/RORProject/Blog
-
-    steps:
-      - checkout
-
-      - run:
-          command: apt-get update -qq && apt-get install -y -qq sqlite3 libsqlite3-dev nodejs
-          command: ruby -v
-          command: which ruby
-          command: gem install bundler --no-document
-          command: bundle install --jobs $(nproc)  "${FLAGS[@]}"
-
-    rspec:
-      run:
-        command: bundle exec rspec
-
-    rubocop:
-      run:
-        command: bundle exec rubocop
-        
-  deploy-stage:
-    docker:
-      - image: ubuntu:14.04
-    working_directory: /tmp/my-project
-    steps:
-      - run:
-          name: Deploy if tests pass and branch is Staging
-          command: ansible-playbook site.yml -i staging
-
-  deploy-prod:
-    docker:
-      - image: ubuntu:14.04
-    working_directory: /tmp/my-project
-    steps:
-      - run:
-          name: Deploy if tests pass and branch is Master
-          command: ansible-playbook site.yml -i production
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build:
-          filters:
-            branches:
-              ignore:
-                - develop
-                - /feature-.*/
-      - deploy-stage:
-          requires:
-            - build
-          filters:
-            branches:
-              only: staging
-      - deploy-prod:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+ version: 2
+ jobs:
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "Hello, Mister"
