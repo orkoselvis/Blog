@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Sport
   desc: MyText
 
 two:
-  name: MyString
-  desc: MyText
+  name: Nature
+  desc: Yeah baby
+
+three:
+  name: Movie
+  desc: Trulala
+
+four:
+  name: Action
+  desc: What a shit is this

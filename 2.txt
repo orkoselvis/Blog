@@ -20,7 +20,7 @@ $ rails test
 $ git push heroku
 $ heroku run rails db:migrate
 
- $ rails console test       --- to run in test environment in console
+ $ rails console -e test       --- to run in test environment in console
   Loading test environment
   >> Rails.env
   => "test"

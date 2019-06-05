@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @articles = @category.articles
     @category = Category.find(params[:id])
-  end
+  end 
 
   # GET /categories/new
   def new
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.json articles{ render json: @category.errors, status: :unprocessable_entity }
       end
     end
   end
