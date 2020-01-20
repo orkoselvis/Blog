@@ -3,8 +3,8 @@
 <div class="col-md-8 text-center">
 <%= image_tag 'banner.png', style: "width:100%" %>
 <div class="jumbotron">
-  <h1>Welcome to my Blog</h1>
-  <p><%= link_to 'Read My Blog', articles_path, class: 'btn btn-lg btn-welcome' %></p>
+  <h1><%= t('main_page.welcome_to') %></h1>
+  <p><%= link_to t('main_page.read_blog'), articles_path, class: 'btn btn-lg btn-welcome' %></p>
 </div>
 </div>
 <div class="col"></div>

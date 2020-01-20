@@ -1,7 +1,7 @@
 <div class="row" style="padding-top:10%;">
 <div class="col"></div>
 <div class="col-md-7">
-<h1> Create a New Article!</h1>
+<h1> <%= t('articles_page.create_new') %></h1>
 <%= form_for :article, url: articles_path, html: {multipart: true} do |f| %>
 <div class="field" style="100%;">
 <!-- Checking for Errors -->
@@ -17,7 +17,7 @@
   <p>
     <%= f.label :category %><br>
     <%= f.select :category_id, Category.all.collect{|c| [c.name, c.id]},
-        prompt: "Choose your category" %>
+        prompt: t('articles_page.choose_category') %>
   </p>
   <p>
     <%= f.label :photo %> <br>
@@ -36,9 +36,9 @@
 </div> <!-- .field -->
 <% end %>
 <p>
-  <%= link_to 'Back', articles_path, class:'btn btn-md btn-info' %>
-  <%= link_to 'Home', welcome_index_path, class:'btn btn-md btn-primary' %>
+  <%= link_to t('articles_page.back'), articles_path, class:'btn btn-md btn-info' %>
+  <%= link_to t('articles_page.home'), welcome_index_path, class:'btn btn-md btn-primary' %>
 </p>
-</div>
+</div>  
 <div class="col"></div>
 </div>
