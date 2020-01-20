@@ -1,0 +1,79 @@
+ua:
+  activerecord:
+    models:
+      user: Customer
+    attributes:
+      user:
+        login: "Handle"
+
+  header:
+    home: "Головна"
+    blog: "Блог"
+    about: "Про Нас"
+    sign_in: "Увійти"
+    subscribers: "Підписники"
+    sign_out: "Вийти"
+    create_account: "Створити Акаунт"
+    language: "Мова"
+    search_here: "Шукай тут"
+    search: "Шукай"
+    hi_admin: "Привіт, Адмін!"
+
+  main_page: 
+    welcome_to: "Вітаю у моєму Блозі"
+    read_blog: "Читай Тут"
+
+  articles_page: 
+    list_of_articles: "Список всіх Записів"
+    photo: "Фото"
+    date: "Дата"
+    title: "Назва"
+    description: "Опис"
+    category: "Категорія"
+    show_articles: "Показати Запис"
+    home: "Головна"
+
+  subscribers_page:
+    list_of_subscribers: "Список всіх Підписників"
+    first_name: "Ім'я"
+    last_name: "Прізвище"
+    email: "Пошта"
+    country: "Країна"
+    delete: "Видалити"
+    home: "Головна"
+
+  sign_in_page:
+    please_sign: "Будь ласка, увійди"
+    input_id: "Введіть ІН Користувача"
+    input_password: "Введіть пароль"
+    sign_in: "Увійти"
+    articles: "Записи"
+    home: "Головна"
+
+  create_account_page:
+    create_account: "Створити Акаунт!"
+    input_id: "Введіть ІН Користувача"
+    input_email: "Введіть вашу Пошту"
+    create_password: "Створіть Пароль"
+    confirm_password: "Підтвердіть Пароль"
+    create_account: "Створіть Акаунт"
+    articles: "Записи"
+    home: "Головна"
+
+  search_page:
+    list_of_articles: "Список всіх записів, які збігаються з пошуком"
+    title: "Назва"
+    description: "Опис"
+    editing_options: "Редагування опцій"
+    back_to_articles: "Повернутися до всіх записів"
+
+  footer:
+    general_info: "Загальна Інформація"
+    lviv: "Львів, Україна"
+    subscribe: "Підпишись"
+    first_name: "Ім'я"
+    last_name: "Прізвище"
+    your_email: "Ваша Пошта"
+    select_country: "Виберіть вашу Країну"
+    submit: "Підтвердити"
+    social: "Соціальні мережі"
