@@ -20,6 +20,7 @@ gem 'paperclip-av-transcoder'
 gem 'hirb'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
