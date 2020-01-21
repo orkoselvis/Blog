@@ -1,7 +1,7 @@
 <div class="row" style="padding-top:0%;">
 <div class="col"></div>
 <div class="col-md-4">
-<h1> Create Account!</h1>
+<h1> <%= t('create_account_page.create_account') %> </h1>
 <%= form_for @user do |f| %>
 <div class="field" style="100%;">
 <!-- Checking for Errors -->
@@ -26,16 +26,16 @@
 </div>
 <% end %> <!-- end of checking errors -->
 
-<%= f.text_field :userid, placeholder: 'Input a User ID', class:'form-contol' %><br>
-<%= f.email_field :email, placeholder: 'Input your email', class:'form-contol' %><br>
-<%= f.password_field :password, placeholder: 'Create a password', class:'form-contol' %><br>
-<%= f.password_field :password_confirmation, placeholder: 'Confirm password', class:'form-contol' %><br>
-<%= f.submit 'Create Account' %>
+<%= f.text_field :userid, placeholder: t('sign_in_page.input_id'), class:'form-contol' %><br>
+<%= f.email_field :email, placeholder: t('sign_in_page.input_email'), class:'form-contol' %><br>
+<%= f.password_field :password, placeholder: t('sign_in_page.create_password'), class:'form-contol' %><br>
+<%= f.password_field :password_confirmation, placeholder: t('sign_in_page.confirm_password'), class:'form-contol' %><br>
+<%= f.submit t('create_account_page.create_account') %>
 <% end %>
 </div>
 <p>
-  <%= link_to 'Articles', articles_path, class:'btn btn-md btn-info' %>
-  <%= link_to 'Home', welcome_index_path, class:'btn btn-md btn-primary' %>
+  <%= link_to t('create_account_page.articles'), articles_path, class:'btn btn-md btn-info' %>
+  <%= link_to t('create_account_page.home'), welcome_index_path, class:'btn btn-md btn-primary' %>
 </p>
 </div>
 <div class="col"></div>

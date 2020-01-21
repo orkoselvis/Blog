@@ -25,13 +25,15 @@ en:
     read_blog: "Read My Blog"
 
   articles_page: 
+    article: "Article:"
+    edit_article: "Edit Article!"
     list_of_articles: "List of all Articles"
     create_new: "Create New Article"
     photo: "Photo"
     date: "Date"
-    title: "Title"
+    title: "Title:"
     description: "Description"
-    category: "Category"
+    category: "Category:"
     editing_options: "Editing Options"
     show_articles: "Show Articles"
     home: "Home"
@@ -39,6 +41,7 @@ en:
     title: "Title"
     text: "Text"
     category: "Category"
+    new_category: "New Category"
     choose_category: "Choose your Category"
     photo: "Photo"
     music: "Music"
@@ -49,6 +52,25 @@ en:
     edit: "Edit"
     delete: "Delete"
     are_you_sure: "Are you sure???"
+
+  category_page:
+    categories: "Categories"
+    name: "Name:"
+    new_category: "New Category"
+    edit_category: "Editing Category"
+    desc: "Description:"
+    articles_under: "Articles under this category:"
+    category: "Category"
+    new_category: "New Category"
+    choose_category: "Choose your Category"
+    destroy: "Destroy"
+
+  comment_page:
+    comment: "Comment:"
+    commenter: "Commenter:"
+    comments: "Comments:"
+    delete: "Delete Comment"
+    add_comment: "Add Comment"
 
   subscribers_page:
     list_of_subscribers: "List of all Subscribers"
@@ -61,14 +83,17 @@ en:
 
   sign_in_page:
     please_sign: "Please Sign In"
-    input_id: "Input User ID"
+    input_id: "Input a User ID"
+    input_email: "Input your email"
+    create_password: "Create a password"
+    confirm_password: "Confirm password"
     input_password: "Input Password"
     sign_in: "Sign In"
+    sign_up: "Sign Up"
     articles: "Articles"
     home: "Home"
 
   create_account_page:
-    create_account: "Create Account!"
     input_id: "Input a User ID"
     input_email: "Input your Email"
     create_password: "Create a Password"

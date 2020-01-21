@@ -25,13 +25,16 @@ ua:
     read_blog: "Читай Тут"
 
   articles_page: 
+    article: "Запис:"
+    edit_article: "Редагувати Запис!"
     list_of_articles: "Список всіх Записів"
     create_new: "Створити новий Запис"
     photo: "Фото"
     date: "Дата"
     title: "Назва"
     description: "Опис"
-    category: "Категорія"
+    category: "Категорія:"
+    new_category: "Нова Категорія"
     editing_options: "Редагування опцій"
     show_articles: "Показати Запис"
     home: "Головна"
@@ -47,6 +50,25 @@ ua:
     delete: "Видалити"
     are_you_sure: "Ви впевнені???"
 
+  category_page:
+    name: "Назва:"
+    new_category: "Нова Категорія"
+    edit_category: "Редагування Категорії"
+    categories: "Категорії"
+    desc: "Опис:"
+    articles_under: "Записи під цією категорією:"
+    category: "Категорія"
+    new_category: "Нова Категорія"
+    choose_category: "Виберіть Вашу Категорію"
+    destroy: "Видалити"
+
+  comment_page:
+    comment: "Коментар:"
+    commenter: "Коментатор:"
+    comments: "Коментарі:"
+    delete: "Видалити Коментар"
+    add_comment: "Додати Коментар"
+
   subscribers_page:
     list_of_subscribers: "Список всіх Підписників"
     first_name: "Ім'я"
@@ -59,18 +81,21 @@ ua:
   sign_in_page:
     please_sign: "Будь ласка, увійди"
     input_id: "Введіть ІН Користувача"
+    input_email: "Введіть Вашу Пошту"
+    create_password: "Створіть Пароль"
+    confirm_password: "Підтвердіть Пароль"
     input_password: "Введіть пароль"
     sign_in: "Увійти"
+    sign_up: "Зареєструватись"
     articles: "Записи"
     home: "Головна"
 
   create_account_page:
-    create_account: "Створити Акаунт!"
+    create_account: "Створити Акаунт"
     input_id: "Введіть ІН Користувача"
     input_email: "Введіть вашу Пошту"
     create_password: "Створіть Пароль"
     confirm_password: "Підтвердіть Пароль"
-    create_account: "Створіть Акаунт"
     articles: "Записи"
     home: "Головна"
 

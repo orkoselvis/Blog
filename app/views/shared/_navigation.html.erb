@@ -30,7 +30,7 @@
             <%= link_to t('header.sign_out'), session_path('active'), method: :delete, class:"active_nav-link" %>
           </li>
           <li class="nav-link">
-            <%= t('header.hi') %>, <%= current_user.userid %>
+            <%= t('header.hi') %>, <%= current_user.userid %>!
           </li>
 
           <% else %>
