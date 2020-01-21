@@ -2,47 +2,38 @@
   <div class="row">
     <div class="col-md-4 darker">
       <div class="col-md-12 padding white">
-        <h4>General Info</h4>
+        <h4><%= t('footer.general_info')%></h4>
         <hr>
-        <h5 class="linktxt">Lviv, Ukraine</h5>
+        <h5 class="linktxt"><%= t('footer.lviv') %></h5>
         <h5 class="linktxt">Adress Line 2</h5>
         <h5 class="linktxt">Adress Line 3</h5>
         <hr>
-        <p class="small-font grey">&copy; 2019 All Rights Reserved</p>
+        <p class="small-font grey">&copy; 2020 All Rights Reserved</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="col-md-12 padding white">
-        <h4>Subscribe</h4>
+        <h4><%= t('footer.subscribe') %></h4>
         <hr>
 
       <%= form_for :subscriber, url: subscribers_path do |f| %>
-      <%= f.text_field :f_name, placeholder: "First Name",
+      <%= f.text_field :f_name, placeholder: t('footer.first_name'),
                          class:"form-control mr-sm-2 sm_style" %>
-      <%= f.text_field :l_name, placeholder: "Last Name",
+      <%= f.text_field :l_name, placeholder: t('footer.last_name'),
                          class:"form-control mr-sm-2 sm_style" %>
-      <%= f.email_field :email, placeholder: "Your Email",
+      <%= f.email_field :email, placeholder: t('footer.your_email'),
                          class:"form-control mr-sm-2 sm_style" %>
       <div class="form-contol2 sm_style">
       <%= f.select :country, your_country,
-            prompt: 'Select your Country' %>
+            prompt: t('footer.select_country') %>
       </div>
-      <%= f.submit 'Submit', class:"btn btn-light my-2 my-sm-0" %>
+      <%= f.submit t('footer.submit'), class:"btn btn-light my-2 my-sm-0" %>
       <% end %>
-  <!--      <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2"
-          type="text"
-          placeholder="Input your Email" aria-label="Email"
-          style="margin-bottom:10px;width:100%;"><br>
-          <button class="btn btn-light my-2 my-sm-0" type="submit">Submit</button>
-        </form>
-
-    -->
       </div>
     </div>
     <div class="col-md-4 dark">
       <div class="col-md-12 padding white">
-        <h4>Social</h4>
+        <h4><%= t('footer.social')%></h4>
         <hr>
         <h5><%= link_to 'facebook', 'https://www.facebook.com/blogthreesixty/', target: :_blank, class:"linktxt" %> </h5>
         <h5><%= link_to 'youtube', 'https://www.youtube.com/user/uttoronto', target: :_blank, class:"linktxt" %> </h5>

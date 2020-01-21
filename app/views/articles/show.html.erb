@@ -7,15 +7,15 @@
 <%= image_tag 'banner.png', style:"width:100%" %>
 <% end %>
 <p>
-  <h2>TITLE:</h2>
+  <h2><%= t('articles_page.title').upcase%>:</h2>
   <strong><%= @article.title %></strong>
 </p>
 <p>
-  <h3>ARTICLE:</h3>
+  <h3><%= t('articles_page.article').upcase%></h3>
   <%= @article.text %>
 </p>
 <p>
-  <h3>CATEGORY:</h3>
+  <h3><%= t('articles_page.category').upcase%></h3>
   <%= @article.category.name%>
 </p>
 <p>
@@ -40,13 +40,13 @@
 <hr>
 <%= render 'comments/form' %>
 <% else %>
-Please <%= link_to 'Sign In', new_session_path %> or
-<%= link_to 'Sign Up', new_user_path %> to create a comment.
+Please <%= link_to t('sign_in_page.sign_in'), new_session_path %> or
+<%= link_to t('sign_in_page.sign_up'), new_user_path %> to create a comment.
 <% end %>
 
 <p><br>
-  <%= link_to 'Back', articles_path, class:'btn btn-md btn-info' %>
-  <%= link_to 'Home', welcome_index_path, class:'btn btn-md btn-primary' %>
+  <%= link_to t('articles_page.back'), articles_path, class:'btn btn-md btn-info' %>
+  <%= link_to t('subscribers_page.home'), welcome_index_path, class:'btn btn-md btn-primary' %>
 </p>
 </div>
 <div class="col"></div>

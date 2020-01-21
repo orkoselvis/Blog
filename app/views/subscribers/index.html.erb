@@ -1,15 +1,15 @@
 <div class="row">
 <div class="col"></div>
 <div class="col-md-10">
-<h1>List of all Subscribers</h1>
+<h1><%= t('subscribers_page.list_of_subscribers') %></h1>
 <table class="table table-hover table-striped table-responsive-xs">
 <thead>
 <tr>
-  <th>First Name</th>
-  <th>Last Name</th>
-  <th>Email Address</th>
-  <th>Country</th>
-  <th>Delete</th>
+  <th><%= t('subscribers_page.first_name') %></th>
+  <th><%= t('subscribers_page.last_name') %></th>
+  <th><%= t('subscribers_page.email') %></th>
+  <th><%= t('subscribers_page.country') %></th>
+  <th><%= t('subscribers_page.delete') %></th>
 </tr>
 </thead>
 <% @subscribers.each do |subscriber| %>
@@ -28,7 +28,7 @@
   </td>
 
   <td>
-    <%= link_to 'Delete', subscriber_path(subscriber),
+    <%= link_to t('subscribers_page.delete'), subscriber_path(subscriber),
         class: 'btn btn-sm btn-danger delete',
         method: :Delete,
         data: {confirm: "Are you sure???", remote: true}%>
@@ -37,7 +37,7 @@
 <% end %>
 </table>
 <p>
-  <%= link_to 'Home', welcome_index_path, class:'btn btn-md btn-warning' %>
+  <%= link_to t('subscribers_page.home'), welcome_index_path, class:'btn btn-md btn-warning' %>
 </p>
 </div>
 <div class="col"></div>

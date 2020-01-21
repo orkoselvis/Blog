@@ -1,11 +1,11 @@
-<h2>Comments</h2>
+<h2> <%= t('comment_page.comments')%> </h2>
   <% @article.comments.each do |comment| %>
   <p>
-    <strong>Commenter:</strong>
+    <strong><%= t('comment_page.commenter')%></strong>
     <%= comment.commenter %>
   </p>
 <p>
-  <strong>Comment:</strong>
+  <strong><%= t('comment_page.comment')%></strong>
   <%= comment.body %>
 </p>
 
@@ -14,10 +14,10 @@
 </p>
 <% if current_user && current_user.admin? %>
 <p>
-  <%= link_to 'Delete Comment', [comment.article, comment],
+  <%= link_to t('comment_page.delete'), [comment.article, comment],
       class: 'btn btn-md btn-danger',
       method: :Delete,
-      data: {confirm: 'Are you sure??'} %>
+      data: {confirm: t('articles_page.are_you_sure')} %>
 </p>
 <% end %>
 <% end %>

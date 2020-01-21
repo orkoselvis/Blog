@@ -6,53 +6,55 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
         <!-- nav_link, action, url, style -->
-        <%= active_link_to 'Home', 'index', 'welcome', welcome_index_path, "active_nav-link" %>
+        <%= active_link_to t('header.home'), 'index', 'welcome', welcome_index_path, "active_nav-link" %>
         </li>
         <li class="nav-item">
-        <%= active_link_to 'Blog', 'index', 'articles', articles_path, "active_nav-link" %>
+        <%= active_link_to t('header.blog'), 'index', 'articles', articles_path, "active_nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'About', pages_about_path, class:"active_nav-link" %>
+          <%= link_to t('header.about'), pages_about_path, class:"active_nav-link" %>
         </li>
 
           <% if current_user && current_user.admin? %>
           <li class="nav-item">
-            <%= active_link_to 'Subscribers', 'subscribers', 'index', subscribers_path, "active_nav-link" %>
+            <%= active_link_to t('header.subscribers'), 'subscribers', 'index', subscribers_path, "active_nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Sign Out', session_path('active'), method: :delete, class:"active_nav-link" %>
+            <%= link_to t('header.sign_out'), session_path('active'), method: :delete, class:"active_nav-link" %>
           </li>
           <li class="nav-link">
-            Hi, Admin! <%= current_user.userid %>
+            <%= t('header.hi_admin') %> <%= current_user.userid %>
           </li>
           <% elsif current_user %>
           <li class="nav-item">
-            <%= link_to 'Sign Out', session_path('active'), method: :delete, class:"active_nav-link" %>
+            <%= link_to t('header.sign_out'), session_path('active'), method: :delete, class:"active_nav-link" %>
           </li>
           <li class="nav-link">
-            Hi, <%= current_user.userid %>
+            <%= t('header.hi') %>, <%= current_user.userid %>!
           </li>
 
           <% else %>
           <li class="nav-item">
-            <%= link_to 'Sign In', new_session_path, class:"active_nav-link" %>
+            <%= link_to t('header.sign_in'), new_session_path, class:"active_nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Create Account', new_user_path, class:"active_nav-link" %>
+            <%= link_to t('header.create_account'), new_user_path, class:"active_nav-link" %>
           </li>
           <% end %>
         </li>
       </ul>
         <div class="form-inline mt-2 mt-md-0">
+          <div class="dropdown">
+            <button class="dropbtn"> <%= t('header.language') %></button>
+            <div class="dropdown-content">
+              <a href="<%= root_path(locale: :en) %>" class="active_nav-link" hreflang="en-US">English</a>
+              <a href="<%= root_path(locale: :ua) %>" class="active_nav-link" hreflang="en-US">Українська</a>
+            </div>
+          </div>
           <%= form_tag search_articles_path, method: :get do %>
-            <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control mr-sm-2" %>
-            <%= submit_tag "Search", class: "btn btn-light my-2 my-sm-0" %>
+            <%= text_field_tag :search, nil, placeholder: t('header.search_here'), class: "form-control mr-sm-2" %>
+            <%= submit_tag t('header.search'), class: "btn btn-light my-2 my-sm-0" %>
           <% end %>
         </div>
-  <!--  <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
-  -->
     </div>
 </nav>
